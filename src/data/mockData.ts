@@ -225,49 +225,31 @@ export const allEvents: Event[] = chapters.flatMap(chapter =>
 export const team: TeamMember[] = [
   {
     id: "member-1",
-    name: "Dr. Roberto García",
+    name: "Christian Mendoza",
     position: "Presidente",
-    email: "roberto.garcia@example.com",
-    whatsapp: "+59177777777",
-    calendarLink: "#calendar",
+    email: "christian.mendoza.h@ucb.edu.bo",
+    whatsapp: "+59175217073",
+    calendarLink: "https://calendar.app.google/UwpwzX5gGh1Ad5Mp7",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
   },
   {
     id: "member-2",
-    name: "Ing. María López",
+    name: "Cesar Vera",
     position: "Vicepresidente",
-    email: "maria.lopez@example.com",
-    whatsapp: "+59177777778",
-    calendarLink: "#calendar",
+    email: "cesar.vera@ucb.edu.bo",
+    whatsapp: "+59173479050",
+    calendarLink: "http://calendar.app.google/cgrfEcY1unvKKUin6",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
   },
   {
     id: "member-3",
-    name: "Lic. Pedro Ramírez",
-    position: "Secretario General",
-    email: "pedro.ramirez@example.com",
-    whatsapp: "+59177777779",
+    name: "Jhulianna Tarqui",
+    position: "Secretaria General",
+    email: "jhulianna.tarqui@ucb.edu.bo",
+    whatsapp: "+59173005680",
     calendarLink: "#calendar",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
   },
-  {
-    id: "member-4",
-    name: "Dra. Laura Sánchez",
-    position: "Tesorera",
-    email: "laura.sanchez@example.com",
-    whatsapp: "+59177777780",
-    calendarLink: "#calendar",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9"
-  },
-  {
-    id: "member-5",
-    name: "Ing. José Torres",
-    position: "Director de Comunicación",
-    email: "jose.torres@example.com",
-    whatsapp: "+59177777781",
-    calendarLink: "#calendar",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
-  }
 ];
 
 export const publications: Publication[] = [

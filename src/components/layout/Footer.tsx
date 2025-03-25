@@ -48,7 +48,7 @@ const Footer = () => {
                   Membresía
                 </Link>
               </li>
-              <li>
+              {/*<li>
                 <Link to="/events" className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
                   Eventos
                 </Link>
@@ -57,11 +57,11 @@ const Footer = () => {
                 <Link to="/publications" className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
                   Publicaciones
                 </Link>
-              </li>
+              </li>*/}
             </ul>
           </div>
           
-          <div>
+          {/*<div>
             <h4 className="text-lg font-semibold mb-4">Contacto</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -83,7 +83,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div>*/}
         </div>
         
         <div className="mt-10 pt-6 border-t border-gray-200 dark:border-gray-800">

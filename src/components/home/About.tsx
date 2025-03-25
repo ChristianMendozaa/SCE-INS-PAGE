@@ -93,18 +93,7 @@ const About = () => {
               de los que podrás formar parte. Asimismo, podrás incorporarte como miembro completo si 
               así lo deseas en un futuro.
             </p>
-            <div className="flex justify-between items-center">
-              <span className="text-primary dark:text-primary-foreground">
-                👉 Está abierta la convocatoria
-              </span>
-              <Link 
-                to="/membership" 
-                className="inline-flex items-center text-sm font-medium text-primary hover:underline"
-              >
-                Formulario de inscripción
-                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
+            
           </div>
         </div>
 
@@ -124,7 +113,7 @@ const About = () => {
           <h3 className="text-xl font-semibold mb-4 text-center">Código Fuente</h3>
           <div className="flex justify-center">
             <a 
-              href="https://github.com/yourusername/norbert-wiener-hub" 
+              href="https://github.com/ChristianMendozaa/SCE-INS-PAGE" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-outline inline-flex items-center"

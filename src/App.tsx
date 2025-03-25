@@ -13,6 +13,7 @@ import Publications from "./pages/Publications";
 import Team from "./pages/Team";
 import News from "./pages/News";
 import Ethics from "./pages/Ethics";
+import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,11 +29,12 @@ const App = () => (
           <Route path="/chapters" element={<Chapters />} />
           <Route path="/chapter/:id" element={<ChapterDetails />} />
           <Route path="/membership" element={<Membership />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/publications" element={<Publications />} />
+          {/*<Route path="/events" element={<Events />} />
+          <Route path="/publications" element={<Publications />} />*/}
           <Route path="/team" element={<Team />} />
-          <Route path="/news" element={<News />} />
+          {/*<Route path="/news" element={<News />} />*/}
           <Route path="/ethics" element={<Ethics />} />
+          {/*<Route path="/projects" element={<Projects />} /> */}
           {/* Catch-all route for 404 pages */}
           <Route path="*" element={<NotFound />} />
         </Routes>

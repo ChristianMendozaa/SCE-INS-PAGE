@@ -132,7 +132,7 @@ const Ethics = () => {
                 </div>
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
                   <Calendar className="h-4 w-4 mr-2" />
-                  <a href="#" className="hover:underline">Ver calendario</a>
+                  <a href="https://calendar.app.google/UwpwzX5gGh1Ad5Mp7" target="_blank" className="hover:underline">Ver calendario</a>
                 </div>
               </div>
               
@@ -148,7 +148,7 @@ const Ethics = () => {
                 </div>
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
                   <Calendar className="h-4 w-4 mr-2" />
-                  <a href="#" className="hover:underline">Ver calendario</a>
+                  <a href="http://calendar.app.google/cgrfEcY1unvKKUin6" target="_blank" className="hover:underline">Ver calendario</a>
                 </div>
               </div>
             </div>

@@ -1,16 +1,12 @@
 
-import { useState, useEffect } from 'react';
-import Hero from '../components/home/Hero';
-import About from '../components/home/About';
-import ChapterCards from '../components/chapters/ChapterCards';
-import MembershipSection from '../components/membership/MembershipSection';
-import EventsCalendar from '../components/events/EventsCalendar';
-import PublicationsSection from '../components/publications/PublicationsSection';
-import TeamSection from '../components/team/TeamSection';
+import React from 'react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import ActiveProjectsSection from '../components/projects/ActiveProjectsSection';
+import ProjectProposalSection from '../components/home/ProjectProposalSection';
+import { useState, useEffect } from 'react';
 
-const Index = () => {
+const Projects = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -43,13 +39,16 @@ const Index = () => {
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       
       <main>
-        <Hero />
-        <About />
-        <ChapterCards />
-        <MembershipSection />
-        {/*<EventsCalendar />
-        <PublicationsSection />*/}
-        <TeamSection />
+        <div className="pt-24 pb-8 px-4 md:px-8 bg-white dark:bg-gray-900">
+          <div className="container mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Proyectos</h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Explora los proyectos activos del SCE y presenta tus ideas para colaborar en nuevas iniciativas.
+            </p>
+          </div>
+        </div>
+        <ActiveProjectsSection />
+        <ProjectProposalSection />
       </main>
       
       <Footer />
@@ -57,4 +56,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Projects;

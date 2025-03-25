@@ -16,11 +16,12 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
   const navigation = [
     { name: 'Inicio', href: '/' },
     { name: 'Capítulos', href: '/chapters' },
+    /*{ name: 'Proyectos', href: '/projects' },*/
     { name: 'Membresía', href: '/membership' },
-    { name: 'Eventos', href: '/events' },
-    { name: 'Publicaciones', href: '/publications' },
+    /*{ name: 'Eventos', href: '/events' },
+    { name: 'Publicaciones', href: '/publications' },*/
     { name: 'Equipo', href: '/team' },
-    { name: 'Noticias', href: '/news' },
+    /*{ name: 'Noticias', href: '/news' },*/
     { name: 'Normas', href: '/ethics' },
   ];
 

@@ -46,8 +46,24 @@ const EventsCalendar = () => {
     return chapter ? chapter.name : '';
   };
 
+  // Get dark variant of chapter color for better text contrast in light mode
+  const getChapterDarkColor = (chapterId: string) => {
+    switch (chapterId) {
+      case 'security':
+        return 'bg-chapter-security-dark';
+      case 'data-science':
+        return 'bg-chapter-data-science-dark';
+      case 'business':
+        return 'bg-chapter-business-dark';
+      case 'systems':
+        return 'bg-chapter-systems-dark';
+      default:
+        return 'bg-gray-800';
+    }
+  };
+
   return (
-    <section ref={sectionRef} className="py-16 md:py-24">
+    <section ref={sectionRef} className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="section-container">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
@@ -80,7 +96,7 @@ const EventsCalendar = () => {
                     onClick={() => setFilter(chapter.id)}
                     className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                       filter === chapter.id 
-                        ? `${chapter.bgColorClass.replace('-DEFAULT', '')} text-white dark:text-white` 
+                        ? `${chapter.bgColorClass.replace('-DEFAULT', '-dark')} text-white` 
                         : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                     }`}
                   >
@@ -97,57 +113,51 @@ const EventsCalendar = () => {
             <p className="text-gray-500 dark:text-gray-400">No se encontraron eventos con el filtro seleccionado.</p>
           </div>
         ) : (
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sortedEvents.map((event, index) => (
               <div 
                 key={event.id}
-                className={`glass-card rounded-xl p-6 border-l-4 ${
-                  getChapterColor(event.chapterId).replace('-bg', '')
-                } transition-all duration-700 delay-${index * 100} ${
+                className={`transition-all duration-700 delay-${index * 100} ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
               >
-                <div className="flex flex-col md:flex-row md:items-center">
-                  {/* Date column */}
-                  <div className="md:w-1/6 mb-4 md:mb-0">
-                    <div className="flex md:flex-col md:items-center">
-                      <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-3 text-center w-20 md:w-24">
-                        <span className="block text-2xl font-bold">
-                          {new Date(event.date).getDate()}
-                        </span>
-                        <span className="block text-sm text-gray-500 capitalize">
-                          {new Date(event.date).toLocaleDateString('es-ES', { month: 'short' })}
-                        </span>
-                      </div>
-                      <div className="ml-4 md:ml-0 md:mt-2 max-w-40">
-                        <span className={`chapter-pill ${getChapterColor(event.chapterId)} text-white inline-block text-center break-words hyphens-auto`}>
-                          {getChapterName(event.chapterId)}
-                        </span>
-                      </div>
+                <div className="flex flex-col h-full rounded-lg overflow-hidden shadow-md">
+                  {/* Date Header */}
+                  <div className="flex flex-col items-center bg-white dark:bg-gray-800 p-3 border-b border-gray-100 dark:border-gray-700">
+                    <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 text-center w-20">
+                      <span className="block text-3xl font-bold">
+                        {new Date(event.date).getDate()}
+                      </span>
+                      <span className="block text-sm text-gray-500 dark:text-gray-400 capitalize">
+                        {new Date(event.date).toLocaleDateString('es-ES', { month: 'short' })}
+                      </span>
                     </div>
                   </div>
                   
-                  {/* Event details */}
-                  <div className="md:w-4/6 md:pl-6">
-                    <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">{event.description}</p>
-                    <div className="flex flex-wrap gap-4 text-sm">
-                      <div className="flex items-center text-gray-500 dark:text-gray-400">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        {event.location}
-                      </div>
+                  {/* Event Details - Using dark variant colors for better contrast in light mode */}
+                  <div className={`flex-grow ${
+                    getChapterDarkColor(event.chapterId)
+                  } text-white p-5`}>
+                    <div className="mb-3">
+                      <span className="inline-block px-3 py-1 text-xs font-semibold bg-white/20 rounded-full">
+                        {getChapterName(event.chapterId)}
+                      </span>
                     </div>
-                  </div>
-                  
-                  {/* Action button */}
-                  <div className="md:w-1/6 mt-4 md:mt-0 md:text-right">
-                    <a 
-                      href={event.registerLink}
-                      className="btn-primary inline-flex items-center text-sm"
-                    >
-                      Registrarse
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
+                    <h3 className="text-lg font-semibold mb-2">{event.title}</h3>
+                    <p className="text-white/90 text-sm mb-4">{event.description}</p>
+                    <div className="flex items-center text-white/80 text-sm mb-4">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      {event.location}
+                    </div>
+                    <div className="mt-auto">
+                      <a 
+                        href={event.registerLink}
+                        className="inline-flex items-center text-sm font-medium bg-white text-gray-800 px-4 py-2 rounded hover:bg-white/90 transition-colors"
+                      >
+                        Registrarse
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -158,7 +168,7 @@ const EventsCalendar = () => {
         {/* All events button */}
         <div className="flex justify-center mt-10">
           <a 
-            href="#"
+            href="/events"
             className="btn-outline"
           >
             Ver calendario completo
