@@ -50,7 +50,7 @@ const Hero = () => {
           <p 
             className={`text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mb-8 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            Investigación, innovación y desarrollo tecnológico aplicado desde la academia
+            Investigación, innovación y desarrollo tecnológico
           </p>
           
           <div 
@@ -73,24 +73,24 @@ const Hero = () => {
           
           {/* Stats */}
           <div 
-            className={`grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 max-w-3xl mx-auto transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            className={`grid grid-cols-2 sm:grid-cols-2 gap-8 mt-16 max-w-3xl mx-auto transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">4</p>
               <p className="text-sm text-gray-500 dark:text-gray-400">Capítulos</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">+50</p>
+              <p className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">+20</p>
               <p className="text-sm text-gray-500 dark:text-gray-400">Miembros</p>
             </div>
-            <div className="text-center">
+            {/*<div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">+20</p>
               <p className="text-sm text-gray-500 dark:text-gray-400">Eventos</p>
             </div>
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">+15</p>
               <p className="text-sm text-gray-500 dark:text-gray-400">Publicaciones</p>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

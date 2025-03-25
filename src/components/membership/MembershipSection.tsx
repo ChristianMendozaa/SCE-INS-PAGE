@@ -164,13 +164,15 @@ const MembershipSection = () => {
             Formulario de inscripción
           </a>
           <a
-            href="/documentos/SCE Acuerdo de Confidencialidad 2025 v2.pdf" // asegúrate que el PDF esté en esa ruta
-            download
+            href="/documents/SCE_Acuerdo_Confidencialidad_2025_v2.pdf"
+            target="_blank" // Esto abre en una nueva pestaña
+            rel="noopener noreferrer" // Seguridad adicional cuando se usa target="_blank"
             className="btn-outline flex items-center w-full md:w-auto"
           >
             <Download className="mr-2 h-4 w-4" />
             Descargar compromiso (PDF)
           </a>
+
         </div>
       </div>
     </section>
