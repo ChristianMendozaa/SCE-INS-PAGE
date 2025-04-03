@@ -63,6 +63,16 @@ export interface Value {
   description: string;
 }
 
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  chapterId: string;
+  teamSize: number;
+  needsMembers: boolean;
+  status: "active" | "completed" | "planned";
+}
+
 // Mock Data
 export const chapters: Chapter[] = [
   {
@@ -143,7 +153,7 @@ export const chapters: Chapter[] = [
     id: "business",
     name: "Tecnología Empresarial",
     description: "Aplicación de soluciones tecnológicas innovadoras en el ámbito empresarial y emprendedor.",
-    leader: "Ing. Lucero Yáñez",
+    leader: "Ing. Oswaldo Figueroa y Ing. Lourdes Peredo",
     colorClass: "text-chapter-business",
     bgColorClass: "bg-chapter-business",
     icon: Calendar,
@@ -180,7 +190,7 @@ export const chapters: Chapter[] = [
     id: "systems",
     name: "Sistemas, Hardware & Software",
     description: "Desarrollo e integración de componentes de hardware y software para crear soluciones tecnológicas completas.",
-    leader: "Ing. Ángel Ávila",
+    leader: "Ing. Oswaldo Figueroa y Ing. Lourdes Peredo",
     colorClass: "text-chapter-systems",
     bgColorClass: "bg-chapter-systems",
     icon: Server,
@@ -212,6 +222,81 @@ export const chapters: Chapter[] = [
       }
     ],
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+  }
+];
+
+export const projects: Project[] = [
+  {
+    id: "proj-1",
+    title: "Sistema de Monitoreo IoT",
+    description: "Desarrollo de una plataforma para monitorear dispositivos IoT en tiempo real con dashboard personalizable.",
+    chapterId: "systems",
+    teamSize: 4,
+    needsMembers: true,
+    status: "active"
+  },
+  {
+    id: "proj-2",
+    title: "Análisis Predictivo de Ventas",
+    description: "Implementación de algoritmos de machine learning para predecir tendencias de ventas para pequeñas empresas.",
+    chapterId: "data-science",
+    teamSize: 5,
+    needsMembers: false,
+    status: "active"
+  },
+  {
+    id: "proj-3",
+    title: "Plataforma de Seguridad Web",
+    description: "Desarrollo de herramientas para auditoría y mejora de la seguridad en aplicaciones web.",
+    chapterId: "security",
+    teamSize: 3,
+    needsMembers: true,
+    status: "active"
+  },
+  {
+    id: "proj-4",
+    title: "Blockchain para Microfinanzas",
+    description: "Sistema basado en blockchain para facilitar microcréditos a emprendedores rurales.",
+    chapterId: "business",
+    teamSize: 4,
+    needsMembers: false,
+    status: "active"
+  },
+  {
+    id: "proj-5",
+    title: "Optimización de Bases de Datos NoSQL",
+    description: "Investigación sobre técnicas de optimización para bases de datos NoSQL en aplicaciones de alto rendimiento.",
+    chapterId: "data-science",
+    teamSize: 2,
+    needsMembers: true,
+    status: "active"
+  },
+  {
+    id: "proj-6",
+    title: "Detección de Intrusiones en Redes",
+    description: "Sistema inteligente para detección de intrusiones en redes utilizando técnicas de machine learning.",
+    chapterId: "security",
+    teamSize: 3,
+    needsMembers: false,
+    status: "completed"
+  },
+  {
+    id: "proj-7",
+    title: "Aplicación de Realidad Aumentada para Educación",
+    description: "Desarrollo de aplicaciones de realidad aumentada para mejorar la experiencia educativa en ciencias.",
+    chapterId: "systems",
+    teamSize: 5,
+    needsMembers: true,
+    status: "planned"
+  },
+  {
+    id: "proj-8",
+    title: "Sistema de Análisis de Sentimiento para Redes Sociales",
+    description: "Implementación de un sistema para análisis de sentimiento en tiempo real para redes sociales.",
+    chapterId: "data-science",
+    teamSize: 3,
+    needsMembers: false,
+    status: "completed"
   }
 ];
 
@@ -247,6 +332,33 @@ export const team: TeamMember[] = [
     position: "Secretaria General",
     email: "jhulianna.tarqui@ucb.edu.bo",
     whatsapp: "+59173005680",
+    calendarLink: "#calendar",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+  },
+  {
+    id: "member-4",
+    name: "Andrea Laffertt",
+    position: "Vocal",
+    email: "andrea.fernandez.l@ucb.edu.bo",
+    whatsapp: "+59172045492",
+    calendarLink: "#calendar",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+  },
+  {
+    id: "member-5",
+    name: "Max Pasten",
+    position: "Vocal",
+    email: "max.pasten@ucb.edu.bo",
+    whatsapp: "+59168171114",
+    calendarLink: "#calendar",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+  },
+  {
+    id: "member-6",
+    name: "Jesus Velasco",
+    position: "Vocal",
+    email: "jaicel.velasco@ucb.edu.bo",
+    whatsapp: "+59167140089",
     calendarLink: "#calendar",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
   },

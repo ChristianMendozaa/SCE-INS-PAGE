@@ -46,8 +46,8 @@ const ChapterCards = () => {
   const chapterLeaders: { [key: string]: string } = {
     'data-science': 'Ing. Oswaldo Figueroa',
     'security': 'Ing. Lourdes Peredo',
-    'business': 'Ing. Lucero Yáñez',
-    'systems': 'Ing. Ángel Ávila'
+    'business': 'Ing. Oswaldo Figueroa y Ing. Lourdes Peredo',
+    'systems': 'Ing. Oswaldo Figueroa y Ing. Lourdes Peredo'
   };
 
   // Chapter logos mapping - using the new SCE logo for systems

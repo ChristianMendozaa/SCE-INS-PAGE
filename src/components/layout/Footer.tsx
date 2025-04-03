@@ -4,7 +4,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from 'luc
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-gray-100 dark:bg-gray-900 mt-10">
       <div className="section-container py-12">
@@ -29,7 +29,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
@@ -48,6 +48,11 @@ const Footer = () => {
                   Membresía
                 </Link>
               </li>
+              <li>
+                <Link to="/projects" className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                  Proyectos
+                </Link>
+              </li>
               {/*<li>
                 <Link to="/events" className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
                   Eventos
@@ -60,8 +65,8 @@ const Footer = () => {
               </li>*/}
             </ul>
           </div>
-          
-          {/*<div>
+
+          <div>
             <h4 className="text-lg font-semibold mb-4">Contacto</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -76,16 +81,10 @@ const Footer = () => {
                   norbertwiener@example.com
                 </a>
               </li>
-              <li className="flex items-center">
-                <Phone size={18} className="mr-2 text-gray-600 dark:text-gray-400" />
-                <a href="tel:+59122222222" className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  +591 2 222 2222
-                </a>
-              </li>
             </ul>
-          </div>*/}
+          </div>
         </div>
-        
+
         <div className="mt-10 pt-6 border-t border-gray-200 dark:border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-xs text-gray-600 dark:text-gray-400">

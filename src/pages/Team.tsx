@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import TeamSection from '../components/team/TeamSection';
+import ActiveMembers from '../components/members/ActiveMembers';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
@@ -46,6 +46,12 @@ const Team = () => {
       </div>
       
       <TeamSection />
+      
+      <div className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="section-container">
+          <ActiveMembers />
+        </div>
+      </div>
       
       <Footer />
     </div>

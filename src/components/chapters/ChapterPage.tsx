@@ -1,8 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, CalendarDays, MapPin, ExternalLink } from 'lucide-react';
-import { chapters, Chapter } from '../../data/mockData';
+import { chapters, Chapter, projects } from '../../data/mockData';
+import ChapterProjects from './ChapterProjects';
 
 const ChapterPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -10,6 +10,7 @@ const ChapterPage = () => {
   const [chapter, setChapter] = useState<Chapter | null>(null);
   const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
+  const [chapterProjects, setChapterProjects] = useState([]);
 
   // Chapter logos mapping - using the new SCE logo for systems
   const chapterLogos: { [key: string]: string } = {
@@ -30,6 +31,10 @@ const ChapterPage = () => {
       const foundChapter = chapters.find(c => c.id === id);
       if (foundChapter) {
         setChapter(foundChapter);
+        
+        // Get projects for this chapter
+        const filteredProjects = projects.filter(p => p.chapterId === id);
+        setChapterProjects(filteredProjects);
       }
       setLoading(false);
       
@@ -128,7 +133,19 @@ const ChapterPage = () => {
               </div>
             </div>
             
-            {/* Chapter events */}
+            {/* Chapter projects section */}
+            <div 
+              className={`transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} mb-8`}
+            >
+              <h2 className="text-2xl font-semibold mb-4">Proyectos del capítulo</h2>
+              <ChapterProjects 
+                projects={chapterProjects}
+                colorClass={chapter.colorClass}
+                bgColorClass={chapter.bgColorClass}
+              />
+            </div>
+            
+            {/* Chapter events 
             <div 
               className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
             >
@@ -164,7 +181,7 @@ const ChapterPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div>*/}
           </div>
           
           {/* Sidebar */}
@@ -176,9 +193,9 @@ const ChapterPage = () => {
               <h3 className="text-xl font-semibold mb-4">Responsable del capítulo</h3>
               <div className="text-gray-600 dark:text-gray-300">
                 <p className="font-medium text-lg">{chapter.leader}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                {/* <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                   Contacto: example@ucb.edu.bo
-                </p>
+                </p>*/}
               </div>
             </div>
             

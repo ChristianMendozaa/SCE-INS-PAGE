@@ -34,8 +34,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           {/*<Route path="/news" element={<News />} />*/}
           <Route path="/ethics" element={<Ethics />} />
-          {/*<Route path="/projects" element={<Projects />} /> */}
-          {/* Catch-all route for 404 pages */}
+          <Route path="/projects" element={<Projects />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

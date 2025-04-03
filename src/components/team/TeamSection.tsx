@@ -36,14 +36,13 @@ const TeamSection = () => {
             Conoce a los líderes de nuestra sociedad científica y su trabajo para promover la investigación.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((member, index) => (
-            <div 
+            <div
               key={member.id}
-              className={`glass-card rounded-xl overflow-hidden transition-all duration-700 delay-${index * 100} ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
+              className={`glass-card rounded-xl overflow-hidden transition-all duration-700 delay-${index * 100} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
             >
               <div className="relative h-64 overflow-hidden">
                 {/*<img 
@@ -57,17 +56,17 @@ const TeamSection = () => {
                   <p className="text-white/80 text-sm">{member.position}</p>
                 </div>
               </div>
-              
+
               <div className="p-6 space-y-4">
-                <a 
+                <a
                   href={`mailto:${member.email}`}
                   className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
                 >
                   <Mail className="mr-3 h-5 w-5 text-gray-400" />
                   {member.email}
                 </a>
-                
-                <a 
+
+                <a
                   href={`https://wa.me/${member.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -76,14 +75,18 @@ const TeamSection = () => {
                   <Phone className="mr-3 h-5 w-5 text-gray-400" />
                   {member.whatsapp}
                 </a>
-                
-                <a 
-                  href={member.calendarLink}
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-                >
-                  <Calendar className="mr-3 h-5 w-5 text-gray-400" />
-                  Agendar reunión
-                </a>
+
+                {member.position.toLowerCase() !== 'vocal' && (
+                  <a
+                    href={member.calendarLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                  >
+                    <Calendar className="mr-3 h-5 w-5 text-gray-400" />
+                    Agendar reunión
+                  </a>
+                )}
               </div>
             </div>
           ))}
