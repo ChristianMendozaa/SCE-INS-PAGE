@@ -134,7 +134,7 @@ const ChapterPage = () => {
             </div>
             
             {/* Chapter projects section */}
-            <div 
+            {/*<div 
               className={`transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} mb-8`}
             >
               <h2 className="text-2xl font-semibold mb-4">Proyectos del capítulo</h2>
@@ -143,7 +143,7 @@ const ChapterPage = () => {
                 colorClass={chapter.colorClass}
                 bgColorClass={chapter.bgColorClass}
               />
-            </div>
+            </div> */}
             
             {/* Chapter events 
             <div 

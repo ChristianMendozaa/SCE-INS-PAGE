@@ -228,76 +228,31 @@ export const chapters: Chapter[] = [
 export const projects: Project[] = [
   {
     id: "proj-1",
-    title: "Sistema de Monitoreo IoT",
-    description: "Desarrollo de una plataforma para monitorear dispositivos IoT en tiempo real con dashboard personalizable.",
-    chapterId: "systems",
-    teamSize: 4,
-    needsMembers: true,
-    status: "active"
-  },
-  {
-    id: "proj-2",
-    title: "Análisis Predictivo de Ventas",
-    description: "Implementación de algoritmos de machine learning para predecir tendencias de ventas para pequeñas empresas.",
+    title: "ArrivAI",
+    description: "¿Sabías que el tiempo que pierdes esperando un bus también afecta tu día, tu productividad y tu bienestar? ArrivAI es una aplicación innovadora que busca predecir con precisión si un bus pasará por una parada específica, según la hora, el día y el historial de comportamiento del transporte. El objetivo es ayudarte a planificar mejor tus desplazamientos y evitar tiempos muertos innecesarios.",
     chapterId: "data-science",
-    teamSize: 5,
-    needsMembers: false,
-    status: "active"
-  },
-  {
-    id: "proj-3",
-    title: "Plataforma de Seguridad Web",
-    description: "Desarrollo de herramientas para auditoría y mejora de la seguridad en aplicaciones web.",
-    chapterId: "security",
-    teamSize: 3,
-    needsMembers: true,
-    status: "active"
-  },
-  {
-    id: "proj-4",
-    title: "Blockchain para Microfinanzas",
-    description: "Sistema basado en blockchain para facilitar microcréditos a emprendedores rurales.",
-    chapterId: "business",
-    teamSize: 4,
-    needsMembers: false,
-    status: "active"
-  },
-  {
-    id: "proj-5",
-    title: "Optimización de Bases de Datos NoSQL",
-    description: "Investigación sobre técnicas de optimización para bases de datos NoSQL en aplicaciones de alto rendimiento.",
-    chapterId: "data-science",
-    teamSize: 2,
-    needsMembers: true,
-    status: "active"
-  },
-  {
-    id: "proj-6",
-    title: "Detección de Intrusiones en Redes",
-    description: "Sistema inteligente para detección de intrusiones en redes utilizando técnicas de machine learning.",
-    chapterId: "security",
-    teamSize: 3,
-    needsMembers: false,
-    status: "completed"
-  },
-  {
-    id: "proj-7",
-    title: "Aplicación de Realidad Aumentada para Educación",
-    description: "Desarrollo de aplicaciones de realidad aumentada para mejorar la experiencia educativa en ciencias.",
-    chapterId: "systems",
-    teamSize: 5,
+    teamSize: 8,
     needsMembers: true,
     status: "planned"
   },
   {
-    id: "proj-8",
-    title: "Sistema de Análisis de Sentimiento para Redes Sociales",
-    description: "Implementación de un sistema para análisis de sentimiento en tiempo real para redes sociales.",
+    id: "proj-2",
+    title: "LipsReader AI",
+    description: "¿Te apasiona la tecnología y quieres ser parte de un proyecto innovador que tiene el poder de cambiar la forma en que nos comunicamos? LipRead AI es una iniciativa en la que todos participarán para desarrollar un modelo de inteligencia artificial capaz de leer los labios y convertirlos en texto, sin necesidad de audio. ¡Y lo mejor de todo es que tú serás parte fundamental del proceso de creación!",
     chapterId: "data-science",
-    teamSize: 3,
-    needsMembers: false,
-    status: "completed"
-  }
+    teamSize: 8,
+    needsMembers: true,
+    status: "planned"
+  },
+  {
+    id: "proj-3",
+    title: "SleepSync AI",
+    description: "¿Sabías que la calidad de tu sueño impacta directamente en tu salud física, mental y rendimiento diario? SleepSync AI es una aplicación innovadora diseñada para ayudar a las personas a mejorar su descanso, mediante un análisis profundo de sus hábitos de sueño y la generación de recomendaciones personalizadas para optimizar su descanso.",
+    chapterId: "data-science",
+    teamSize: 5,
+    needsMembers: true,
+    status: "planned"
+  },
 ];
 
 export const allEvents: Event[] = chapters.flatMap(chapter => 

@@ -29,7 +29,7 @@ const formSchema = z.object({
 const ProjectProposalSection = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -43,12 +43,12 @@ const ProjectProposalSection = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // In a real app, you would send this data to your backend
     console.log(values);
-    
+
     toast({
       title: "Propuesta enviada",
       description: "Hemos recibido tu propuesta de proyecto. Te contactaremos pronto.",
     });
-    
+
     form.reset();
     setIsDialogOpen(false);
   }
@@ -61,7 +61,7 @@ const ProjectProposalSection = () => {
             ¿Tienes una idea innovadora? ¡Nosotros te apoyamos!
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Como miembro de la SCE, puedes postular tu proyecto o idea y te ayudaremos a encontrar 
+            Como miembro de la SCE, puedes postular tu proyecto o idea y te ayudaremos a encontrar
             colaboradores, desarrollar tu concepto e incluso buscar oportunidades de financiamiento.
           </p>
           <div className="w-20 h-1 bg-primary mx-auto rounded"></div>
@@ -77,7 +77,7 @@ const ProjectProposalSection = () => {
               Transforma tu concepto en un proyecto real con nuestra orientación y recursos.
             </p>
           </div>
-          
+
           <div className="glass-card p-6 rounded-xl text-center">
             <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Users className="h-8 w-8 text-primary" />
@@ -87,7 +87,7 @@ const ProjectProposalSection = () => {
               Te ayudamos a encontrar colaboradores con las habilidades necesarias para tu proyecto.
             </p>
           </div>
-          
+
           <div className="glass-card p-6 rounded-xl text-center">
             <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Rocket className="h-8 w-8 text-primary" />
@@ -97,7 +97,7 @@ const ProjectProposalSection = () => {
               Si tu proyecto tiene potencial comercial, te guiamos en el proceso de crear una startup.
             </p>
           </div>
-          
+
           <div className="glass-card p-6 rounded-xl text-center">
             <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Award className="h-8 w-8 text-primary" />
@@ -110,92 +110,11 @@ const ProjectProposalSection = () => {
         </div>
 
         <div className="text-center">
-          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-            <DialogTrigger asChild>
-              <Button size="lg" className="px-8">
-                Postula tu proyecto
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[500px]">
-              <DialogHeader>
-                <DialogTitle>Propuesta de proyecto</DialogTitle>
-                <DialogDescription>
-                  Cuéntanos sobre tu idea o proyecto para que podamos ayudarte a desarrollarlo.
-                </DialogDescription>
-              </DialogHeader>
-              
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 pt-4">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Nombre completo</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Tu nombre" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Correo electrónico</FormLabel>
-                        <FormControl>
-                          <Input placeholder="tu@email.com" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="projectTitle"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Título del proyecto</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Nombre de tu idea o proyecto" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="projectDescription"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Descripción del proyecto</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Describe brevemente tu idea, sus objetivos y qué tipo de ayuda necesitas..." 
-                            className="min-h-[120px]" 
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormDescription>
-                          Incluye detalles sobre el problema que resuelve y los recursos que podrías necesitar.
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <DialogFooter className="pt-4">
-                    <Button type="submit">Enviar propuesta</Button>
-                  </DialogFooter>
-                </form>
-              </Form>
-            </DialogContent>
-          </Dialog>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9a8pbHMaSny4hHzvSk6i_Oha9ItIbY4gIMKoaJOZ6QABolQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="px-8">
+              Postula tu proyecto
+            </Button>
+          </a>
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="section-container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Norbert Wiener Hub</h3>
+            <h3 className="text-xl font-semibold">Norbert Wiener</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Sociedad Científica Estudiantil de Ingeniería de Sistemas, Universidad Católica Boliviana "San Pablo".
             </p>
@@ -77,8 +77,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-gray-600 dark:text-gray-400" />
-                <a href="mailto:norbertwiener@example.com" className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  norbertwiener@example.com
+                <a href="mailto:sce.centro@gmail.com" className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                  sce.centro@gmail.com
                 </a>
               </li>
             </ul>

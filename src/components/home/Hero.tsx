@@ -44,7 +44,7 @@ const Hero = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold max-w-4xl">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-chapter-data-science via-chapter-security to-chapter-business">
                 Norbert Wiener
-              </span> Hub
+              </span>
             </h1>
           </div>
 

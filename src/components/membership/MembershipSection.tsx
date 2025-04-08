@@ -156,7 +156,7 @@ const MembershipSection = () => {
           className={`mt-12 flex flex-col md:flex-row items-center justify-center gap-4 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <a
-            href="https://forms.gle/s7GEeWe21oNbeYAQ8" // reemplaza con el link real
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfFxMFetYzFZaDUpZgEx-yDXUdZ70ML-rGBMJDrWygfSy-FcQ/viewform?usp=dialog" // reemplaza con el link real
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary w-full md:w-auto"
