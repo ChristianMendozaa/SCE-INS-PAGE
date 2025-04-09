@@ -270,7 +270,7 @@ export const team: TeamMember[] = [
     email: "christian.mendoza.h@ucb.edu.bo",
     whatsapp: "+59175217073",
     calendarLink: "https://calendar.app.google/UwpwzX5gGh1Ad5Mp7",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+    image: "/images/directiva/Chris.jpg"
   },
   {
     id: "member-2",
@@ -279,7 +279,7 @@ export const team: TeamMember[] = [
     email: "cesar.vera@ucb.edu.bo",
     whatsapp: "+59173479050",
     calendarLink: "http://calendar.app.google/cgrfEcY1unvKKUin6",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+    image: "/images/directiva/Cesar.jpg"
   },
   {
     id: "member-3",
@@ -288,7 +288,7 @@ export const team: TeamMember[] = [
     email: "jhulianna.tarqui@ucb.edu.bo",
     whatsapp: "+59173005680",
     calendarLink: "#calendar",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    image: "/images/directiva/Jhuly.jpeg"
   },
   {
     id: "member-4",
@@ -297,7 +297,7 @@ export const team: TeamMember[] = [
     email: "andrea.fernandez.l@ucb.edu.bo",
     whatsapp: "+59172045492",
     calendarLink: "#calendar",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    image: "/images/directiva/Andrea.jpg"
   },
   {
     id: "member-5",
@@ -306,7 +306,7 @@ export const team: TeamMember[] = [
     email: "max.pasten@ucb.edu.bo",
     whatsapp: "+59168171114",
     calendarLink: "#calendar",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    image: ""
   },
   {
     id: "member-6",
@@ -315,7 +315,7 @@ export const team: TeamMember[] = [
     email: "jaicel.velasco@ucb.edu.bo",
     whatsapp: "+59167140089",
     calendarLink: "#calendar",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    image: ""
   },
 ];
 

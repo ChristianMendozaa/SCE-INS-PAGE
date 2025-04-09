@@ -45,11 +45,17 @@ const TeamSection = () => {
                 }`}
             >
               <div className="relative h-64 overflow-hidden">
-                {/*<img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />*/}
+                {member.image && (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    onError={(e) => {
+                      // Oculta la imagen si no se carga
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-xl font-semibold text-white mb-1">{member.name}</h3>

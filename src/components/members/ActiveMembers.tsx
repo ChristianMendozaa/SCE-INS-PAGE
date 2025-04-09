@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { 
@@ -11,43 +10,41 @@ import {
 } from "@/components/ui/table";
 import { Filter, UserRound } from 'lucide-react';
 
-// Mock data adaptado desde datos reales
+// Updated mock data to allow members to be in multiple chapters
 const mockMembers = [
-  { id: 5600, initials: "RN", name: "Rachel Nicole", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5601, initials: "SL", name: "Scarlet Luciana", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5602, initials: "WB", name: "Wara Brisa", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5603, initials: "YL", name: "Yorck Legolas", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5604, initials: "AK", name: "Axl Kevin", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5605, initials: "AF", name: "Adrián Fernando", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5606, initials: "MF", name: "Manuel Franco", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5607, initials: "AA", name: "Alvaro Ariel", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5608, initials: "JA", name: "Jesus Ademar", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5609, initials: "KC", name: "Kayro Cesar", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5610, initials: "AA", name: "Adrian Alberto", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5611, initials: "VC", name: "Valeria Christen", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-  { id: 5612, initials: "AC", name: "Andres Chacon", role: "Miembro", chapter: "data-science", joinedYear: "2025" },
-
-  // Los miembros anteriores (ya estaban en tu código)
-  { id: 1331, initials: "AG", name: "Abel I. Garcia", role: "Miembro", chapter: "data-science", joinedYear: "2024" },
-  { id: 1337, initials: "CZ", name: "Carlos A. Zarate", role: "Miembro", chapter: "security", joinedYear: "2024" },
-  { id: 1417, initials: "AJ", name: "Alvaro G. Jurado", role: "Miembro", chapter: "data-science", joinedYear: "2024" },
-  { id: 1418, initials: "JT", name: "Jhulianna V. Tarqui", role: "Líder", chapter: "data-science", joinedYear: "2024" },
-  { id: 1419, initials: "JN", name: "Josue A. Nisthaus", role: "Miembro", chapter: "security", joinedYear: "2024" },
-  { id: 1420, initials: "LV", name: "Luciana Velasco", role: "Miembro", chapter: "security", joinedYear: "2024" },
-  { id: 1910, initials: "AP", name: "Andy F. Palenque", role: "Miembro", chapter: "data-science", joinedYear: "2024" },
-  { id: 2625, initials: "GC", name: "Gino Crespo", role: "Miembro", chapter: "data-science", joinedYear: "2024" },
-  { id: 2671, initials: "AB", name: "Alejandro A. Bobarin", role: "Miembro", chapter: "data-science", joinedYear: "2024" },
-  { id: 3969, initials: "CM", name: "Christian M. Mendoza", role: "Líder", chapter: "data-science", joinedYear: "2024" },
-  { id: 4203, initials: "MP", name: "Max A. Pasten", role: "Líder", chapter: "data-science", joinedYear: "2024" },
-  { id: 4321, initials: "OC", name: "Oscar Campohermoso", role: "Miembro", chapter: "data-science", joinedYear: "2023" },
-  { id: 5571, initials: "IR", name: "Ignacio Retamozo", role: "Miembro", chapter: "security", joinedYear: "2024" },
-  { id: 6808, initials: "CV", name: "Cesar M. Vera", role: "Líder", chapter: "data-science", joinedYear: "2024" },
-  { id: 6973, initials: "AO", name: "Ariel Oblitas", role: "Miembro", chapter: "security", joinedYear: "2024" },
-  { id: 7209, initials: "LR", name: "Luis D. Rojas", role: "Miembro", chapter: "security", joinedYear: "2024" },
-  { id: 7746, initials: "AF", name: "Andrea L. Fernández", role: "Líder", chapter: "data-science", joinedYear: "2024" },
-  { id: 8080, initials: "MC", name: "Miguel A. Carrasco", role: "Miembro", chapter: "data-science", joinedYear: "2023" },
-  { id: 8540, initials: "JH", name: "Jaime I. Huaycho", role: "Miembro", chapter: "security", joinedYear: "2024" },
-  { id: 8984, initials: "JV", name: "Jaicel J. Velasco", role: "Miembro", chapter: "data-science", joinedYear: "2024" },
+  { id: 5600, initials: "RN", name: "Rachel N.", role: "Miembro", chapters: ["data-science"], joinedYear: "2025" },
+  { id: 5601, initials: "SL", name: "Scarlet L.", role: "Miembro", chapters: ["data-science", "security"], joinedYear: "2025" },
+  { id: 5602, initials: "WB", name: "Wara B.", role: "Miembro", chapters: ["data-science", "business"], joinedYear: "2025" },
+  { id: 5603, initials: "YL", name: "Yorck L.", role: "Miembro", chapters: ["data-science", "business"], joinedYear: "2025" },
+  { id: 5604, initials: "AK", name: "Axl K.", role: "Miembro", chapters: ["data-science", "security"], joinedYear: "2025" },
+  { id: 5605, initials: "AF", name: "Adrián F.", role: "Miembro", chapters: ["data-science", "business"], joinedYear: "2025" },
+  { id: 5606, initials: "MF", name: "Manuel F.", role: "Miembro", chapters: ["data-science", "security"], joinedYear: "2025" },
+  { id: 5607, initials: "AA", name: "Alvaro A.", role: "Miembro", chapters: ["business", "systems"], joinedYear: "2025" },
+  { id: 5608, initials: "JA", name: "Jesus A.", role: "Miembro", chapters: ["security", "systems"], joinedYear: "2025" },
+  { id: 5609, initials: "KC", name: "Kayro C.", role: "Miembro", chapters: ["security", "business", "systems"], joinedYear: "2025" },
+  { id: 5610, initials: "AA", name: "Adrian A.", role: "Miembro", chapters: ["business"], joinedYear: "2025" },
+  { id: 5611, initials: "VC", name: "Valeria C.", role: "Miembro", chapters: ["security", "systems"], joinedYear: "2025" },
+  { id: 5612, initials: "AC", name: "Andres C.", role: "Miembro", chapters: ["data-science", "security", "business", "systems"], joinedYear: "2025" },
+  { id: 1331, initials: "AI", name: "Abel I.", role: "Miembro", chapters: ["data-science"], joinedYear: "2024" },
+  { id: 1337, initials: "CA", name: "Carlos A.", role: "Miembro", chapters: ["security"], joinedYear: "2024" },
+  { id: 1417, initials: "AG", name: "Alvaro G.", role: "Miembro", chapters: ["data-science", "security"], joinedYear: "2024" },
+  { id: 1418, initials: "JV", name: "Jhulianna V.", role: "Miembro", chapters: ["data-science"], joinedYear: "2024" },
+  { id: 1419, initials: "JA", name: "Josue A.", role: "Miembro", chapters: ["security"], joinedYear: "2024" },
+  { id: 1420, initials: "LV", name: "Luciana V.", role: "Miembro", chapters: ["security"], joinedYear: "2024" },
+  { id: 1910, initials: "AF", name: "Andy F.", role: "Miembro", chapters: ["data-science"], joinedYear: "2024" },
+  { id: 2625, initials: "GC", name: "Gino C.", role: "Miembro", chapters: ["data-science"], joinedYear: "2024" },
+  { id: 2671, initials: "AA", name: "Alejandro A.", role: "Miembro", chapters: ["data-science", "security"], joinedYear: "2024" },
+  { id: 3969, initials: "CM", name: "Christian M.", role: "Miembro", chapters: ["data-science"], joinedYear: "2024" },
+  { id: 4203, initials: "MA", name: "Max A.", role: "Miembro", chapters: ["data-science", "security"], joinedYear: "2024" },
+  { id: 4321, initials: "OC", name: "Oscar C.", role: "Miembro", chapters: ["data-science"], joinedYear: "2023" },
+  { id: 5571, initials: "IR", name: "Ignacio R.", role: "Miembro", chapters: ["security"], joinedYear: "2024" },
+  { id: 6808, initials: "CM", name: "Cesar M.", role: "Miembro", chapters: ["data-science"], joinedYear: "2024" },
+  { id: 6973, initials: "AO", name: "Ariel O.", role: "Miembro", chapters: ["security"], joinedYear: "2024" },
+  { id: 7209, initials: "LD", name: "Luis D.", role: "Miembro", chapters: ["security"], joinedYear: "2024" },
+  { id: 7746, initials: "AL", name: "Andrea L.", role: "Miembro", chapters: ["data-science"], joinedYear: "2024" },
+  { id: 8080, initials: "MA", name: "Miguel A.", role: "Miembro", chapters: ["data-science"], joinedYear: "2023" },
+  { id: 8540, initials: "JI", name: "Jaime I.", role: "Miembro", chapters: ["security"], joinedYear: "2024" },
+  { id: 8984, initials: "JJ", name: "Jaicel J.", role: "Miembro", chapters: ["data-science"], joinedYear: "2024" },
 ];
 
 
@@ -55,7 +52,7 @@ const ActiveMembers = () => {
   const [filter, setFilter] = useState<string | null>(null);
   
   const filteredMembers = filter 
-    ? mockMembers.filter(member => member.chapter === filter)
+    ? mockMembers.filter(member => member.chapters.includes(filter))
     : mockMembers;
 
   const getChapterName = (chapterId: string) => {
@@ -94,7 +91,7 @@ const ActiveMembers = () => {
         <div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Miembros Activos</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl">
-            Nuestros miembros participan en diferentes capítulos según su área de interés.
+            Nuestros miembros participan en diferentes capítulos según sus áreas de interés.
           </p>
         </div>
         
@@ -140,7 +137,7 @@ const ActiveMembers = () => {
               <TableHead className="w-[80px]">Perfil</TableHead>
               <TableHead>Nombre</TableHead>
               <TableHead>Rol</TableHead>
-              <TableHead>Capítulo</TableHead>
+              <TableHead>Capítulos</TableHead>
               <TableHead className="text-right">Año de ingreso</TableHead>
             </TableRow>
           </TableHeader>
@@ -157,9 +154,16 @@ const ActiveMembers = () => {
                 <TableCell className="font-medium">{member.name}</TableCell>
                 <TableCell>{member.role}</TableCell>
                 <TableCell>
-                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getChapterColor(member.chapter)}`}>
-                    {getChapterName(member.chapter)}
-                  </span>
+                  <div className="flex flex-wrap gap-1">
+                    {member.chapters.map(chapter => (
+                      <span 
+                        key={`${member.id}-${chapter}`}
+                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getChapterColor(chapter)}`}
+                      >
+                        {getChapterName(chapter)}
+                      </span>
+                    ))}
+                  </div>
                 </TableCell>
                 <TableCell className="text-right">{member.joinedYear}</TableCell>
               </TableRow>
