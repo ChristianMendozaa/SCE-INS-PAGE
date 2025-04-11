@@ -228,8 +228,8 @@ export const chapters: Chapter[] = [
 export const projects: Project[] = [
   {
     id: "proj-1",
-    title: "ArrivAI",
-    description: "¿Sabías que el tiempo que pierdes esperando un bus también afecta tu día, tu productividad y tu bienestar? ArrivAI es una aplicación innovadora que busca predecir con precisión si un bus pasará por una parada específica, según la hora, el día y el historial de comportamiento del transporte. El objetivo es ayudarte a planificar mejor tus desplazamientos y evitar tiempos muertos innecesarios.",
+    title: "AccesAI",
+    description: "¿Sabías que la seguridad en la entrada de tu universidad puede transformar tu experiencia diaria y fortalecer el sentido de comunidad? AccesAI  es una solución innovadora que transforma la forma en que se controla el acceso en el campus, identificando de manera precisa quién forma parte de la comunidad universitaria y quién no. Gracias a un sistema inteligente y basado en datos verificados, AccesAI garantiza que solo ingresen las personas autorizadas, incrementando la seguridad y generando confianza en el entorno académico.",
     chapterId: "data-science",
     teamSize: 8,
     needsMembers: true,
